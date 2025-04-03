@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback Form</title>
+    <style>
+
+    .ai_assistant_div {
+      background-color:rgba(30, 30, 120, 0.5);
+      width: 25rem;
+      position: absolute;
+      bottom: 1%;
+      right: 1%;
+    }
+
+    .title {
+    justify-content: center;
+    }
+
+    .rating input {
+      display: none;
+    }
+
+    .rating {
+      direction: rtl;
+      display: inline-flex;
+      font-size: 2.5rem;
+      justify-content: center;
+    }
+
+    .stars {
+      font-size: 1rem;
+    }
+
+    .rating label {
+      color: light gray;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .rating input:checked ~ label,
+    .rating label:hover,
+    .rating label:hover ~ label {
+      color: gold;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="ai_assistant_div">
+    <h4 class="title">CAIVA Assistant solution</h4>
+    <h5>{{ solution }}</h5>
+    <p>Do we solve your problem? Did you find it useful? Let us know your feedback about the provided solution!</p>
+    <form method="POST" name="feedback_form" action="/">
+      <label for="input_feedback">Feedback us! </label>
+      <input type="text" name="input_feedback" id="input_feedback" max="3000">
+        <div class="rating">
+          <input type="radio" id="star1" value="1"><label class="stars" for="star1">★</label>
+          <input type="radio" id="star2" value="2"><label class="stars" for="star2">★</label>
+          <input type="radio" id="star3" value="3"><label class="stars" for="star3">★</label>
+          <input type="radio" id="star4" value="4"><label class="stars" for="star4">★</label>
+          <input type="radio" id="star5" value="5"><label class="stars" for="star5">★</label>
+      </div>
+      <input type="submit" value="Send feedback">
+    </form>
+  </div>
+
+</body>
+</html>

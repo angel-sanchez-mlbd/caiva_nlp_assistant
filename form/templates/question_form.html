@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question Form</title>
+
+    <style>
+
+        .ai_assistant_div {
+          background-color:rgba(30, 30, 120, 0.5);
+          width: 25rem;
+          position: absolute;
+          bottom: 1%;
+          right: 1%;
+        }
+
+        .title {
+          justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="ai_assistant_div">
+    <h4 class="title">CAIVA Assistant solution</h4>
+    <h5>{{ message }}</h5>
+    <h5>Make your question and we will be grateful to answer you</h5>
+    <form method="POST" name="question_form" action="/resolve">
+        <input type="text" name="input_question">
+        <input type="submit" value="Ask">
+    </form>
+  </div>
+</body>
+</html>
